@@ -1,0 +1,630 @@
+/* Aquí guardo todos los colores y medidas que uso en toda la página */
+:root {
+    --color-amarillo: #f3c93e;
+    --color-amarillo-hover: #e0b730;
+    --color-verde: #78c4aa;
+    --color-verde-hover: #66b397;
+    --color-blanco: #ffffff;
+    --color-texto-oscuro: #0c0c0c;
+    --color-texto-gris: #4e4f50;
+    --color-footer: #2c2c2c;
+    --padding-seccion: 90px 0;
+    --border-radius: 5px;
+    --transicion: all 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: var(--color-texto-oscuro);
+    background-color: var(--color-blanco);
+    overflow-x: hidden;
+}
+
+/* Este contenedor mantiene todo centrado y con un ancho máximo */
+.cont {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Mi sistema de columnas casero con flexbox */
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col_6 {
+    width: 50%;
+    padding: 0 15px;
+}
+
+.col_3 {
+    width: 25%;
+    padding: 0 15px;
+}
+
+/* Para que todas las secciones tengan el mismo espacio arriba y abajo */
+.esp_sec {
+    padding: var(--padding-seccion);
+}
+
+/* Cositas básicas que siempre hay que resetear */
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+/* La parte amarilla de arriba con la curva abajo */
+.cont_sup {
+    background-color: var(--color-amarillo);
+    position: relative;
+    overflow: hidden;
+}
+
+.cont_sup::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--color-blanco);
+    border-radius: 100% 100% 0 0;
+    z-index: 1;
+}
+
+.sec_cab {
+    padding: 15px 0;
+}
+
+/* El menú de navegación */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-blanco);
+}
+
+.menu {
+    display: flex;
+    margin-left: auto;
+}
+
+.item {
+    margin-left: 20px;
+}
+
+.link {
+    padding: 5px 20px;
+    color: var(--color-blanco);
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: var(--border-radius);
+    transition: var(--transicion);
+}
+
+.item:hover .link {
+    color: var(--color-texto-oscuro);
+}
+
+.item.activo .link {
+    color: var(--color-blanco);
+}
+
+/* La sección grande con la imagen y el texto principal */
+.sec_prin {
+    position: relative;
+    color: var(--color-blanco);
+    padding: 65px 0 120px;
+    z-index: 2;
+}
+
+.cont_prin {
+    display: flex;
+    align-items: center;
+}
+
+.caja_det_prin {
+    width: 45%;
+}
+
+.caja_img_prin {
+    width: 55%;
+}
+
+.caja_img_prin img {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.caja_det_prin h1 {
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.caja_det_prin p {
+    margin: 20px 0 35px;
+}
+
+/* Esto lo uso para todas las secciones del medio */
+.estilo_com > section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.estilo_com .fila {
+    align-items: center;
+}
+
+.estilo_com h3 {
+    font-weight: 600;
+    color: #151516;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.estilo_com p {
+    color: var(--color-texto-gris);
+    margin-bottom: 30px;
+}
+
+/* Las secciones que van alternando fondo blanco con curvas de color */
+.sec_sobre,
+.sec_porque,
+.sec_adm,
+.sec_det {
+    background-color: var(--color-blanco);
+    padding: var(--padding-seccion);
+    position: relative;
+}
+
+/* Las curvas verdes del lado derecho */
+.sec_sobre::before,
+.sec_porque::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-color: var(--color-verde);
+    border-radius: 100% 0 0 100%;
+    z-index: -1;
+}
+
+/* Las curvas amarillas del lado izquierdo */
+.sec_adm::before,
+.sec_det::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background-color: var(--color-amarillo);
+    border-radius: 0 100% 100% 0;
+    z-index: -1;
+}
+
+/* Para las imágenes y textos de estas secciones */
+.cont_img {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.caja_det {
+    margin: 45px 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Los botones que uso en toda la página */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: var(--transicion);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn_amar {
+    background-color: var(--color-amarillo);
+    border: 1px solid var(--color-amarillo);
+    color: var(--color-blanco);
+}
+
+.btn_amar:hover {
+    background-color: var(--color-amarillo-hover);
+}
+
+.btn_verde {
+    background-color: var(--color-verde);
+    border: 1px solid var(--color-verde);
+    color: var(--color-blanco);
+}
+
+.btn_verde:hover {
+    background-color: var(--color-verde-hover);
+}
+
+.btn_borde {
+    background-color: transparent;
+    border: 1px solid var(--color-blanco);
+    color: var(--color-blanco);
+}
+
+.btn_borde:hover {
+    background-color: var(--color-amarillo);
+    border-color: var(--color-amarillo);
+    color: var(--color-texto-oscuro);
+}
+
+/* La sección de testimonios con las tarjetas y los puntitos */
+.sec_test {
+    padding: var(--padding-seccion);
+    background-color: var(--color-blanco);
+}
+
+.sec_test h2 {
+    text-align: center;
+    margin-bottom: 45px;
+    font-weight: bold;
+    font-size: 30px;
+    color: #333;
+}
+
+.cont_test {
+    background-color: var(--color-blanco);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.fila_cli {
+    display: flex;
+    align-items: flex-start;
+}
+
+.caja_img_cli {
+    margin-right: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caja_img_cli img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.caja_img_cli::before,
+.caja_img_cli::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 8px;
+    background-color: var(--color-amarillo);
+    border-radius: 4px;
+}
+
+.caja_img_cli::before {
+    top: 15px;
+    left: -15px;
+    transform: rotate(-45deg);
+}
+
+.caja_img_cli::after {
+    bottom: 15px;
+    right: -15px;
+    transform: rotate(-45deg);
+}
+
+.caja_det_cli h5 {
+    color: var(--color-amarillo);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.ind_test {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.ind {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.ind:nth-child(1) {
+    background-color: var(--color-amarillo);
+}
+
+.ind:nth-child(2),
+.ind:nth-child(3) {
+    background-color: var(--color-verde);
+}
+
+/* El formulario de contacto */
+.sec_cont {
+    background-color: var(--color-blanco);
+    padding: var(--padding-seccion);
+    position: relative;
+}
+
+.sec_cont h2 {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.form_cont {
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+.campo {
+    margin-bottom: 25px;
+}
+
+.campo label {
+    display: none;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background-color: transparent;
+    transition: var(--transicion);
+    border-radius: 0;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--color-verde);
+    outline: none;
+    box-shadow: none;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* El botón de enviar que se levanta cuando pasas el mouse */
+.btn_env {
+    background-color: var(--color-verde);
+    color: var(--color-blanco);
+    border: none;
+    padding: 12px 30px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicion);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn_env:hover {
+    background-color: var(--color-verde-hover);
+    transform: translateY(-2px);
+}
+
+.caja_img_cont {
+    margin-top: 0;
+    text-align: center;
+}
+
+.caja_img_cont img {
+    max-width: 80%;
+}
+
+/* El pie de página oscuro */
+.sec_info {
+    background-color: var(--color-footer);
+    color: var(--color-blanco);
+}
+
+.caja_logo_info {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.caja_logo_info h2 {
+    font-weight: bold;
+    padding: 5px 7px;
+    border-bottom: 1.5px solid var(--color-amarillo);
+}
+
+.sec_info h5 {
+    margin-bottom: 12px;
+    font-size: 22px;
+    color: var(--color-amarillo);
+}
+
+.sec_info ul li {
+    margin: 3px 0;
+}
+
+.sec_info ul li a {
+    color: var(--color-blanco);
+}
+
+.sec_info ul li a:hover {
+    color: var(--color-amarillo);
+}
+
+.cont_soc {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.caja_soc {
+    display: flex;
+}
+
+.caja_soc a {
+    margin: 0 10px;
+}
+
+/* El formulario para suscribirse al boletín */
+.cont_form input {
+    width: 100%;
+    border: 0;
+    height: 45px;
+    border-radius: 0;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    background-color: var(--color-blanco);
+    outline: none;
+    box-shadow: none;
+}
+
+.cont_form button {
+    padding: 10px 25px;
+    border-radius: var(--border-radius);
+    border: none;
+    color: var(--color-blanco);
+    font-weight: bold;
+    background-color: var(--color-amarillo);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.cont_form button:hover {
+    background-color: var(--color-amarillo-hover);
+}
+
+/* La franja amarilla con el copyright */
+.sec_pie {
+    background-color: var(--color-amarillo);
+    padding: 20px 15px;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+    bottom: 0;
+}
+
+.sec_pie p {
+    margin: 0;
+    color: #222;
+}
+
+.sec_pie a {
+    color: #222;
+}
+
+/* Para que se vea bien en móviles y tablets */
+@media (max-width: 992px) {
+    .cont_prin {
+        flex-direction: column;
+    }
+
+    .caja_det_prin,
+    .caja_img_prin {
+        width: 100%;
+    }
+    
+    .caja_det_prin {
+        margin-bottom: 45px;
+    }
+
+    .col_6 {
+        width: 100%;
+    }
+
+    .col_3 {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    
+    .sec_sobre::before,
+    .sec_porque::before,
+    .sec_adm::before,
+    .sec_det::before {
+        width: 100%;
+        height: 40%;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .caja_det_prin h1 {
+        font-size: 40px;
+    }
+
+    .fila_cli {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .caja_img_cli {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .col_3 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .caja_det_prin h1 {
+        font-size: 30px;
+    }
+}
